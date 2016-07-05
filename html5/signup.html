@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<title> Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="2signup.css">
+	<script type="text/javascript">
+		function store()
+		{
+			if(typeof(Storage)!=="undefined")
+			{
+				var name=document.getElementById("name").value;
+				var email=document.getElementById("email").value;
+				var pwd=document.getElementById("pwd").value;
+				sessionStorage.u_name=name;
+				sessionStorage.email=email;
+				sessionStorage.pwd=pwd;
+			}
+			else 
+			{
+        		alert("Oops, your browser does not support web storage");
+    		}
+		}
+	</script>
+
+	<style type="text/css">
+		body	{
+			background-color: orange;
+		}
+		header
+		{
+			position:relative;
+			top:0px;
+			left:40px;
+		}
+		
+		h3
+		{
+			color:black
+			font-family:calibri;
+		}
+		
+		section
+		{
+			height:400px;
+			width: 587px;
+			float: left;
+			padding:2px;
+			margin: 2px;
+			position: absolute;
+			left:40px;
+		}
+		input
+		{
+			width:550px;
+			height: 30px;
+			border: 1px solid red;
+			margin: 10px;
+			padding:5px;
+		}
+		#button
+		{
+			width:110px;
+			border-radius:0px;
+			
+			font-family:Arial;
+			color:white;
+			background-color: red;
+			font-weight: bold;
+			float:right;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		
+	</header>
+	<section>
+		<h3>Please fill the details..</h3>
+		<form action="login.html" method="post" id="form1" onsubmit="store();">
+			<input type="text" placeholder="User name" name="u.name" maxlength="40" autocomplete required id="name"><br>
+			<input type="email" placeholder="Email" name="email" maxlength="40" autocomplete required id='email'><br>
+			<input type="password" placeholder="Password" name="pwd1" required id='pwd'><br>
+			<input type="Submit" value="Register" id="button">
+		</form>
+	</section>
+
+</body>
+</html>
